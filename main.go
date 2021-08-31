@@ -8,7 +8,7 @@ import (
 func main ( ){
 	router:= gin.Default()
 
-	router.GET("/chuks", helloWorldhandler)
+	router.GET("/", helloWorldhandler)
 	port :=os.Getenv("PORT")
 	if port == "" {
 		port = "3000"
