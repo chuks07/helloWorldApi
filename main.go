@@ -14,7 +14,7 @@ func main ( ){
 		port = "3000"
 	}
 
-	_ =router.Run(":3000")
+
 }
 
 func helloWorldhandler(c *gin.Context) {
