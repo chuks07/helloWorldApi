@@ -2,12 +2,17 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"os"
 )
 
 func main ( ){
 	router:= gin.Default()
 
 	router.GET("/chuks", helloWorldhandler)
+	port :=os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
 
 	_ =router.Run(":3000")
 }
