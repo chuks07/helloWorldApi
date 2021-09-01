@@ -82,15 +82,20 @@ func getSingleUserHandler( c *gin.Context)  {
 	fmt.Println("name", name)
 
 	var user User
+
+	userAvailable := false
 	
 	for _, value := range Users {
 		
 		if value.Name == name {
 
 			user = value
+
+			userAvailable = true
 		}
 	}
-	if &user == nil {
+
+	if !userAvailable  {
 		c.JSON( 404,gin.H{
 			"error": "no user with name found:" + name,
 		})
